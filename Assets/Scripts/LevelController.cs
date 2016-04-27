@@ -10,6 +10,8 @@ public class LevelController : MonoBehaviour
     GameObject play;
     bool player_exist = false;
     bool asteroids_exist = false;
+    public int medexist = 5; //do zmiany 
+
 
     void spawn_asteroids()
     {
@@ -47,10 +49,11 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        if(medexist==0)
         {
-            Destroy(play);
-            player_exist = false;
+            asteroids_exist = false;
+            spawn_asteroids();
+            medexist = 5;
         }
     }
 }

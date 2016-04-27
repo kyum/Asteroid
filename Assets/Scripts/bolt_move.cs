@@ -18,6 +18,8 @@ public class bolt_move : MonoBehaviour
         if (collision.gameObject.name == meteor_med.name)
         {
             Destroy(collision.gameObject);
+            GameObject.Find("LevelController").GetComponent<LevelController>().medexist--;
+            Debug.Log(GameObject.Find("LevelController").GetComponent<LevelController>().medexist);
         }
     }
 }
